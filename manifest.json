@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Google Chat Custom Sound",
+  "version": "1.0.0",
+  "description": "Overrides Google Chat notification sound with a custom one. Supports a random pool of sounds.",
+  "permissions": ["storage", "unlimitedStorage"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.google.com/*", "https://*.chat.google.com/*"],
+      "js": ["bridge.js"],
+      "run_at": "document_start",
+      "world": "ISOLATED",
+      "all_frames": true
+    },
+    {
+      "matches": ["https://chat.google.com/*", "https://*.chat.google.com/*"],
+      "js": ["override.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    }
+  ]
+}

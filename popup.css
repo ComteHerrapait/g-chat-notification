@@ -1,0 +1,52 @@
+body { margin: 0; padding: 0; }
+
+.window { width: 380px; }
+
+.list-fieldset { padding: 8px 10px 10px; margin: 0 0 8px; }
+.sound-list {
+  width: 100%;
+  height: 180px;
+  overflow-y: auto;
+  padding: 2px;
+}
+
+.sound-row {
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  cursor: default;
+  user-select: none;
+}
+.sound-row.selected {
+  background: navy;
+  color: #fff;
+}
+.sound-row.empty {
+  color: gray;
+  justify-content: center;
+  padding: 8px;
+}
+.sound-row .cb-box {
+  flex: none;
+  margin-right: 6px;
+}
+.sound-row .name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+.sound-row.disabled .name {
+  color: gray;
+}
+.sound-row.selected.disabled .name {
+  color: #b5b5b5;
+}
+
+.button-row { justify-content: flex-start; margin-bottom: 8px; }
+.button-row.center { justify-content: center; }
+
+.native-row { margin-bottom: 8px; }
+
+.status-bar { margin-bottom: 8px; }

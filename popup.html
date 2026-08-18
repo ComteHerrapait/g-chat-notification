@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="98.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">Chat Sound - Settings</div>
+      <div class="title-bar-controls">
+        <button id="closeBtn" aria-label="Close"></button>
+      </div>
+    </div>
+
+    <div class="window-body">
+      <fieldset class="list-fieldset">
+        <legend>Sound Files</legend>
+        <div id="list" class="sunken-panel sound-list"></div>
+      </fieldset>
+
+      <div class="field-row button-row">
+        <button id="addBtn">Add...</button>
+        <button id="removeBtn" disabled>Remove</button>
+        <button id="previewBtn" disabled>Preview</button>
+        <button id="randomBtn" disabled>Random</button>
+      </div>
+
+      <div class="field-row native-row">
+        <input type="checkbox" id="useNative">
+        <label for="useNative">Use Google's native sound</label>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-bar-field" id="status">Ready.</div>
+      </div>
+
+      <div class="field-row button-row center">
+        <button id="okBtn" class="default">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+  <audio id="player" hidden></audio>
+  <script src="popup.js"></script>
+</body>
+</html>
